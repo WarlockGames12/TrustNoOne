@@ -5,7 +5,7 @@ public class CameraMovementScript : MonoBehaviour
 
     [Header("Camera Settings:")]
     [SerializeField] private Transform target;
-    [SerializeField, Range(0, 1000)] private float speed;
+    [SerializeField, Range(0.01f, 2f)] private float speed;
     [SerializeField] private Vector3 camOffset;
 
     // private variables
