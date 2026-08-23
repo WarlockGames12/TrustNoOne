@@ -818,8 +818,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   playerSpeed: 5
+  sprintMultiplier: 1.5
   rb: {fileID: 450809899}
-  jumpForce: 7.5
+  jumpForce: 5
   groundCheck: {fileID: 1074011081}
   layer:
     serializedVersion: 2

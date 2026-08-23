@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Player Settings:")]
     [SerializeField, Range(0, 100)] private float playerSpeed; 
+    [SerializeField, Range(0, 100)] private float sprintMultiplier;
     [SerializeField] private Rigidbody rb;
 
     [Header("Player Jump Settings:")]
@@ -15,6 +16,9 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Player Ladder Settings:")]
     [SerializeField] private LayerMask ladderMask;
+
+    // private variables
+    private bool is_sprinting;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -26,10 +30,12 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         var on_ladder = OnLadder();
-
         var hor = Input.GetAxisRaw("Horizontal");
-        var movement = hor * playerSpeed * Time.fixedDeltaTime * Vector3.right;
 
+        is_sprinting = Input.GetKey(KeyCode.LeftShift);
+        var speed = playerSpeed * (is_sprinting ? sprintMultiplier : 1);
+
+        var movement = hor * speed * Time.fixedDeltaTime * Vector3.right;
         if (on_ladder)
         {
             var ver = Input.GetAxisRaw("Vertical");
