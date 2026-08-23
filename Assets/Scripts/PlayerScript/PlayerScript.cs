@@ -12,9 +12,9 @@ public class PlayerScript : MonoBehaviour
     [SerializeField, Range(0, 100)] private float jumpForce;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask layer;
-    
-    private bool jump_pressed;
 
+    [Header("Player Ladder Settings:")]
+    [SerializeField] private LayerMask ladderMask;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -25,12 +25,21 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        var on_ladder = OnLadder();
+
         var hor = Input.GetAxisRaw("Horizontal");
         var movement = hor * playerSpeed * Time.fixedDeltaTime * Vector3.right;
 
+        if (on_ladder)
+        {
+            var ver = Input.GetAxisRaw("Vertical");
+            movement += ver * playerSpeed * Time.fixedDeltaTime * Vector3.up;
+        }
+
         rb.MovePosition(rb.position + movement);
+        rb.useGravity = !on_ladder;
     }
-    
+
     private void Update() => Jump();
 
     private void Jump()
@@ -42,5 +51,10 @@ public class PlayerScript : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics.CheckSphere(groundCheck.position, 0.2f, layer);
+    }
+
+    private bool OnLadder()
+    {
+        return Physics.CheckSphere(groundCheck.position, 0.2f, ladderMask, QueryTriggerInteraction.Collide);
     }
 }

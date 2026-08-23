@@ -824,6 +824,9 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 64
+  ladderMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &665838100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +1145,7 @@ GameObject:
   - component: {fileID: 1051239115}
   - component: {fileID: 1051239114}
   - component: {fileID: 1051239113}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ladder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1182,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1397,7 +1400,7 @@ GameObject:
   - component: {fileID: 1211172722}
   - component: {fileID: 1211172721}
   - component: {fileID: 1211172720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1509,7 +1512,7 @@ GameObject:
   - component: {fileID: 1235751697}
   - component: {fileID: 1235751696}
   - component: {fileID: 1235751695}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ladder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1546,7 +1549,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1733,7 +1736,7 @@ GameObject:
   - component: {fileID: 1382526691}
   - component: {fileID: 1382526690}
   - component: {fileID: 1382526689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1770,7 +1773,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
