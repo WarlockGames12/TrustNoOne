@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: GameObject
+  m_Script: {fileID: 11500000, guid: 87fdea4811d4fed4fb76fa76ef16d764, type: 3}
+  m_Name: GameObject2
   m_EditorClassIdentifier: Assembly-CSharp::GameObjectEvent
-  eventId: Event1
-  active: 0
+  eventId: Event2
+  active: 1
