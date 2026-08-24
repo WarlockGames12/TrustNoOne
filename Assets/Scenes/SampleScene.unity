@@ -1400,6 +1400,8 @@ GameObject:
   - component: {fileID: 1191580736}
   - component: {fileID: 1191580735}
   - component: {fileID: 1191580734}
+  - component: {fileID: 1191580737}
+  - component: {fileID: 1191580738}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1468,6 +1470,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1191580737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191580733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c4e1751dc15114d911fadb296d5f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventPlayer
+  dialogue: {fileID: 1453048427}
+  eventAnim: {fileID: 0}
+  events:
+  - {fileID: 11400000, guid: e6fa03343b9ad1c46ae7703826a946c4, type: 2}
+  - {fileID: 11400000, guid: 02af91e626f3877428dd2f05e0973f06, type: 2}
+  - {fileID: 11400000, guid: 601c4b807f26a1044b7024fb47745cb7, type: 2}
+  playOnStart: 1
+  playOnEnable: 0
+--- !u!114 &1191580738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191580733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e4177f0f48e5846af563f0b4cd64a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventTarget
+  id: Event1
 --- !u!1 &1211172718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,6 +1951,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382526687}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1453048427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1202794807180508442, guid: 1cd964bafe1e0b444a4ee48db85dacba, type: 3}
+  m_PrefabInstance: {fileID: 359126597039470261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f440e66ecd079468429e3089a535b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
+--- !u!1 &1488295757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1488295760}
+  - component: {fileID: 1488295759}
+  - component: {fileID: 1488295758}
+  m_Layer: 0
+  m_Name: Event2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1488295758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488295757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e4177f0f48e5846af563f0b4cd64a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventTarget
+  id: Event2
+--- !u!114 &1488295759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488295757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c4e1751dc15114d911fadb296d5f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventPlayer
+  dialogue: {fileID: 1453048427}
+  eventAnim: {fileID: 0}
+  events:
+  - {fileID: 11400000, guid: 61ec094e19ee9a442b77cf1c9f76e069, type: 2}
+  playOnStart: 0
+  playOnEnable: 1
+--- !u!4 &1488295760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488295757}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 941.4836, y: 474.47165, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1502735627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,3 +2396,4 @@ SceneRoots:
   - {fileID: 450809898}
   - {fileID: 359126597039470261}
   - {fileID: 1191580736}
+  - {fileID: 1488295760}
