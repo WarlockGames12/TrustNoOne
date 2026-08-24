@@ -67,5 +67,8 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "TrustNoOne.slnx"
+    "dotnet.defaultSolution": "TrustNoOne.slnx",
+    "cSpell.words": [
+        "scriptable"
+    ]
 }

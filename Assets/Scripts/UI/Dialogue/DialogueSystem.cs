@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class DialogueSystem : MonoBehaviour
 
     [Header("Dialogue Options Settings:")]
     [SerializeField] private Transform[] buttonPlaces;
-    [SerializeField] private Button[] dialogueButtons;
+    [SerializeField] private Button dialogueButtons;
 
     [Header("Events")]
     private readonly Action onDialogueComplete;
@@ -28,12 +29,14 @@ public class DialogueSystem : MonoBehaviour
     private int current_line_index;
     private bool is_typing;
     private Coroutine type_routine;
+    private readonly List<Button> active_dialogue_buttons = new();
 
     // Update is called once per frame
     private void Update()
     {
         if (current_dialogue == null) return;
 
+        // Use this to skip or advance to next dialogue
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (is_typing)
@@ -48,6 +51,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue(DialogueBox dialogue)
     {
+        // Starting dialogue
         current_dialogue = dialogue;
         current_line_index = 0;
 
@@ -57,18 +61,22 @@ public class DialogueSystem : MonoBehaviour
 
     private void DisplayCurrentLine()
     {
+        // If there's nothing more afterwards, end the dialogue!
         if (current_line_index >= current_dialogue.dialogueEntries.Length)
         {
             EndDialogue();
             return;
         }
 
+        // show speaker name before advancing to typing
         var entry = current_dialogue.dialogueEntries[current_line_index];
         speakerName.text = entry.speakerName;
 
+        // Stop the coroutine if there's nothing to display
         if (type_routine == null)
             StopCoroutine(type_routine);
 
+        // Let the typing commence
         type_routine = StartCoroutine(TypeLine(entry.speakerDescription, entry.speakerVoice));
     }
 
@@ -93,12 +101,14 @@ public class DialogueSystem : MonoBehaviour
 
     private void EndDialogue()
     {
+        // If during the ending of the dialogue has a dialogue options in there. Show them to the player
         if (current_dialogue != null && current_dialogue.dialogueOptions.Length > 0)
         {
             ShowDialogueOptions();
             return;
         }
 
+        // End the normal dialogue right here.
         speakerDescription.text = "";
         speakerName.text = "";
 
@@ -109,23 +119,26 @@ public class DialogueSystem : MonoBehaviour
 
     private void ShowDialogueOptions()
     {
+        // Get the options in scriptable object
         var options = current_dialogue.dialogueOptions;
         
-        for (var i = 0; i < dialogueButtons.Length; i++)
+        for (var i = 0; i < options.Length; i++)
         {
-            if (i < options.Length)
+            if (i >= buttonPlaces.Length)
+                break;
+            
+            // 
+            var button = Instantiate(dialogueButtons, buttonPlaces[i]);
+            button.transform.localPosition = Vector3.zero;
+
+            button.GetComponentInChildren<Text>().text = options[i].optionText;
+            int option_index = i;
+            
+            button.onClick.AddListener(() =>
             {
-                dialogueButtons[i].gameObject.SetActive(true);
-                dialogueButtons[i].GetComponentInChildren<Text>().text = options[i].optionText;
-
-                int option_index = i;
-
-                dialogueButtons[i].onClick.RemoveAllListeners();
-                dialogueButtons[i].onClick.AddListener(() =>
-                {
-                   SelectDialogueOption(option_index);
-                });
-            }
+               SelectDialogueOption(option_index); 
+            });
+            active_dialogue_buttons.Add(button);
         }
     }
 
@@ -144,8 +157,10 @@ public class DialogueSystem : MonoBehaviour
 
     private void HideDialogueOptions()
     {
-        foreach (var button in dialogueButtons)
-            button.gameObject.SetActive(false);
+        foreach (var button in active_dialogue_buttons)
+            Destroy(button.gameObject);
+        
+        active_dialogue_buttons.Clear();
     }
 
     private IEnumerator TypeLine(string dialogueLine, AudioClip voiceClip)
