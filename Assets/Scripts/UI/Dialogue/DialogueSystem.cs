@@ -25,20 +25,16 @@ public class DialogueSystem : MonoBehaviour
     private readonly Action onDialogueComplete;
 
     // private variables
-    public DialogueBox current_dialogue;
+    private DialogueBox current_dialogue;
     private int current_line_index;
     private bool is_typing;
     private Coroutine type_routine;
     private readonly List<Button> active_dialogue_buttons = new();
 
-    private void Awake()
-    {
-        StartDialogue(current_dialogue);
-    }
-
     // Update is called once per frame
     private void Update()
     {
+        // if there's no current dialogue, don't play it.
         if (current_dialogue == null) return;
 
         // Use this to skip or advance to next dialogue
@@ -196,4 +192,6 @@ public class DialogueSystem : MonoBehaviour
         is_typing = false;
         type_routine = null;
     }
+
+    public bool IsDialogueActive() => current_dialogue != null;
 }
