@@ -25,11 +25,16 @@ public class DialogueSystem : MonoBehaviour
     private readonly Action onDialogueComplete;
 
     // private variables
-    private DialogueBox current_dialogue;
+    public DialogueBox current_dialogue;
     private int current_line_index;
     private bool is_typing;
     private Coroutine type_routine;
     private readonly List<Button> active_dialogue_buttons = new();
+
+    private void Awake()
+    {
+        StartDialogue(current_dialogue);
+    }
 
     // Update is called once per frame
     private void Update()
@@ -73,8 +78,11 @@ public class DialogueSystem : MonoBehaviour
         speakerName.text = entry.speakerName;
 
         // Stop the coroutine if there's nothing to display
-        if (type_routine == null)
+        if (type_routine != null)
+        {
             StopCoroutine(type_routine);
+            type_routine = null;
+        }
 
         // Let the typing commence
         type_routine = StartCoroutine(TypeLine(entry.speakerDescription, entry.speakerVoice));
