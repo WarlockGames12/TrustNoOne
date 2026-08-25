@@ -731,7 +731,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e0f94aba54354f649b0f406477091477, type: 2}
+  - {fileID: -4183819037635927983, guid: 7f0db81bc62123f44866e4b825572c41, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -821,11 +821,17 @@ MonoBehaviour:
   playerSpeed: 5
   sprintMultiplier: 1.5
   rb: {fileID: 450809899}
+  jumpSource: {fileID: 0}
+  jumpOrLand: []
   jumpForce: 5
   groundCheck: {fileID: 1074011081}
   layer:
     serializedVersion: 2
     m_Bits: 64
+  playerFootsteps: {fileID: 0}
+  footsteps: []
+  footstepSpeedWalk: 0
+  footstepSpeedClimb: 0
   ladderMask:
     serializedVersion: 2
     m_Bits: 128
