@@ -10,15 +10,23 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Rigidbody rb;
 
     [Header("Player Jump Settings:")]
+    [SerializeField] private AudioSource jumpSource;
+    [SerializeField] private AudioClip[] jumpOrLand;
     [SerializeField, Range(0, 100)] private float jumpForce;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask layer;
+
+    [Header("Player Footstep Sound Settings:")]
+    [SerializeField] private AudioSource playerFootsteps;
+    [SerializeField] private AudioClip[] footsteps;
+    [SerializeField, Range(0, 1)] private float footstepSpeedWalk, footstepSpeedClimb;
 
     [Header("Player Ladder Settings:")]
     [SerializeField] private LayerMask ladderMask;
 
     // private variables
     private bool is_sprinting;
+    private float footstep_timer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -44,6 +52,38 @@ public class PlayerScript : MonoBehaviour
 
         rb.MovePosition(rb.position + movement);
         rb.useGravity = !on_ladder;
+
+        Footsteps(on_ladder);
+    }
+
+    private void Footsteps(bool on_ladder)
+    {
+        if (playerFootsteps == null || footsteps.Length == 0)
+            return;
+        
+        bool move;
+
+        if (on_ladder)
+            move = Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0;
+        else  
+            move = Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0;
+
+        if (!move || (!on_ladder && !IsGrounded()))
+        {
+            footstep_timer = 0;
+            return;
+        }
+
+        footstep_timer -= Time.fixedDeltaTime;
+        if (footstep_timer <= 0)
+        {
+            playerFootsteps.pitch = Random.Range(0.75f, 1.25f);
+            if (!on_ladder)
+                playerFootsteps.PlayOneShot(footsteps[Random.Range(0, 1)]);
+            else
+                playerFootsteps.PlayOneShot(footsteps[2]);
+            footstep_timer = on_ladder ? footstepSpeedClimb : footstepSpeedWalk;
+        }
     }
 
     private void Update() => Jump();
@@ -51,7 +91,13 @@ public class PlayerScript : MonoBehaviour
     private void Jump()
     {  
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            jumpSource.pitch = Random.Range(0.75f, 1.25f);
+            jumpSource.clip = jumpOrLand[0];
+            jumpSource.Play();
+            
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
     }
 
     private bool IsGrounded()

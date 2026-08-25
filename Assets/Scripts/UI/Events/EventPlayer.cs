@@ -23,6 +23,7 @@ public class EventPlayer : MonoBehaviour
     private void Awake()
     {
         var scene_targets = FindObjectsByType<EventTarget>(FindObjectsInactive.Include);
+       
         foreach (var tar in scene_targets)
         {
             if (!event_objects.ContainsKey(tar.ID))
