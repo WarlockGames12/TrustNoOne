@@ -9,6 +9,8 @@ Sound Effects:    Pixabay:
 			- Freesound Community
 			- DRAGON-STUDIO
 			- oxidvideos
+			- thekids15
 Sound Effects Remixed by: Dirk
+			  DraTheBean
 Shaders:	  
 Skybox:		  BG_Studio
