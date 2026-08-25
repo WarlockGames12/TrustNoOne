@@ -76,7 +76,10 @@ public class PlayerScript : MonoBehaviour
         if (footstep_timer <= 0)
         {
             playerFootsteps.pitch = Random.Range(0.75f, 1.25f);
-            playerFootsteps.PlayOneShot(footsteps[Random.Range(0, footsteps.Length)]);
+            if (!on_ladder)
+                playerFootsteps.PlayOneShot(footsteps[Random.Range(0, 1)]);
+            else
+                playerFootsteps.PlayOneShot(footsteps[2]);
             footstep_timer = on_ladder ? footstepSpeedClimb : footstepSpeedWalk;
         }
     }
