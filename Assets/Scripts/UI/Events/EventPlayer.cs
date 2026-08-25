@@ -9,6 +9,7 @@ public class EventPlayer : MonoBehaviour
     [Header("References:")]
     [SerializeField] private DialogueSystem dialogue;
     [SerializeField] private Animator eventAnim;
+    [SerializeField] private Transform spawnPoint;
 
     [Header("Event Player Settings:")]
     [SerializeField] private GameEvent[] events;
@@ -29,6 +30,8 @@ public class EventPlayer : MonoBehaviour
             if (!event_objects.ContainsKey(tar.ID))
                 event_objects.Add(tar.ID, tar);
         }
+
+        dialogue = FindAnyObjectByType<DialogueSystem>(FindObjectsInactive.Include);
     }
 
     private void OnEnable()
@@ -82,5 +85,10 @@ public class EventPlayer : MonoBehaviour
         
         Debug.LogWarning($"Event target: '{id}' could not be found.");
         return null;
+    }
+
+    public Transform GetTransform()
+    {
+        return spawnPoint;
     }
 }

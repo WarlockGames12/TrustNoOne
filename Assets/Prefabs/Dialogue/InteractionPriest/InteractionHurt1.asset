@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a311bb6270eaaa546b7f6a8f69d86167, type: 3}
+  m_Name: InteractionHurt1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
+  dialogueEntries:
+  - speakerVoice: {fileID: 0}
+    speakerName: 'Priest:'
+    speakerDescription: '"I am here for anyone that needs care..."'
+  - speakerVoice: {fileID: 0}
+    speakerName: 'Priest:'
+    speakerDescription: '"I came here with medical equipment..."'
+  - speakerVoice: {fileID: 0}
+    speakerName: 'Priest:'
+    speakerDescription: '"Meaning to heal..."'
+  dialogueOptions:
+  - optionText: I see...Come in...
+    nextDialogue: {fileID: 0}
+  - optionText: Equipment? How did you find them?
+    nextDialogue: {fileID: 0}
+  anotherEvent: 0

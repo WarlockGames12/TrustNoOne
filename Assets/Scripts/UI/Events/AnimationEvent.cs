@@ -7,7 +7,8 @@ public class AnimationEvent : GameEvent
     public enum AnimationAction
     {
         Play,
-        SetBool
+        SetBool,
+        SetActive
     }
 
     [Header("Action Settings:")]
@@ -20,6 +21,12 @@ public class AnimationEvent : GameEvent
     [SerializeField] private string boolName;
     [SerializeField] private bool boolVal;
 
+    [Header("Wait Settings:")]
+    [SerializeField] private bool waitForFinish = true;
+
+    [Header("Set Active Settings:")]
+    [SerializeField] private bool SetActive;
+
     public override IEnumerator Execute(EventPlayer eventPlayer)
     {
         var anim = eventPlayer.GetAnimator();
@@ -27,9 +34,34 @@ public class AnimationEvent : GameEvent
         {
             case AnimationAction.Play:
                 anim.Play(animName);
+
+                if (waitForFinish)
+                {
+                    yield return null;
+                    while (!anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
+                        yield return null;
+                    while (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+                        yield return null;
+                }
+
                 break;
             case AnimationAction.SetBool:
                 anim.SetBool(boolName, boolVal);
+
+                if (waitForFinish)
+                {
+                    yield return null;
+
+                    while (anim.IsInTransition(0))
+                        yield return null;
+
+        
+                    while (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+                        yield return null;
+                }
+                break;
+            case AnimationAction.SetActive:
+                anim.enabled = SetActive;
                 break;
         }
 

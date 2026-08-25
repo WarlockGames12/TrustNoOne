@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 6438567052894683042}
   - component: {fileID: 3298070202670250186}
   - component: {fileID: 1202794807180508442}
+  - component: {fileID: 7252245389938787778}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -881,6 +882,19 @@ MonoBehaviour:
   - {fileID: 4526914982761532427}
   - {fileID: 7993752910503816920}
   dialogueButtons: {fileID: 7547773962606234687, guid: bae3002747cae9c4aa6bc718afb38eb0, type: 3}
+--- !u!114 &7252245389938787778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103797065881602640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e4177f0f48e5846af563f0b4cd64a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventTarget
+  id: 
 --- !u!1 &7185355946762097747
 GameObject:
   m_ObjectHideFlags: 0
