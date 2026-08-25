@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: DialogueMan
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   dialogueEntries:
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: 935fd8e61109fa744a26cf58f205fea7, type: 3}
     speakerName: 'Leon:'
     speakerDescription: '"Finally, someone opened the hatch..."'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: 935fd8e61109fa744a26cf58f205fea7, type: 3}
     speakerName: 'Leon:'
     speakerDescription: '"Come on, let''s get it done already, righty?"'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: 935fd8e61109fa744a26cf58f205fea7, type: 3}
     speakerName: 'Leon:'
     speakerDescription: '"Analyse me so I can enter you fuckin'' psycho."'
   dialogueOptions:

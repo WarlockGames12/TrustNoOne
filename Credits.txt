@@ -1,13 +1,14 @@
 Trust No One:
 
 Programmed by:    Dirk
-		  Kendahl
 Music Created by: Dirk
-		  Roel
-Models Made by:   Roel
+		  DraTheBean
+Models Made by:   DraTheBean
 Sound Effects:    Pixabay:
 			- EAGLAXLE
 			- Freesound Community
 			- DRAGON-STUDIO
-Shaders:	  Github:
-			- Cyanilux
+			- oxidvideos
+Sound Effects Remixed by: Dirk
+Shaders:	  
+Skybox:		  BG_Studio

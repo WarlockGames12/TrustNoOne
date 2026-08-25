@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Rigidbody rb;
 
     [Header("Player Jump Settings:")]
+    [SerializeField] private AudioSource jumpSource;
+    [SerializeField] private AudioClip[] jumpOrLand;
     [SerializeField, Range(0, 100)] private float jumpForce;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask layer;
@@ -89,7 +91,13 @@ public class PlayerScript : MonoBehaviour
     private void Jump()
     {  
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            jumpSource.pitch = Random.Range(0.75f, 1.25f);
+            jumpSource.clip = jumpOrLand[0];
+            jumpSource.Play();
+            
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
     }
 
     private bool IsGrounded()
