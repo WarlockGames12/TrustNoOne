@@ -23,8 +23,8 @@ MonoBehaviour:
     speakerName: 'Priest:'
     speakerDescription: '"Meaning to heal..."'
   dialogueOptions:
-  - optionText: I see...Come in...
-    nextDialogue: {fileID: 0}
+  - optionText: Let me decide to think
+    nextDialogue: {fileID: 11400000, guid: 68b2908bc40747e4dac3bc3fdf80144b, type: 2}
   - optionText: Equipment? How did you find them?
     nextDialogue: {fileID: 0}
   anotherEvent: 0

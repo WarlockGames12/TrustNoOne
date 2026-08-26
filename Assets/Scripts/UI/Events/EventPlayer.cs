@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EventPlayer : MonoBehaviour
@@ -15,11 +14,12 @@ public class EventPlayer : MonoBehaviour
     [SerializeField] private GameEvent[] events;
     [SerializeField] private bool playOnStart;
     [SerializeField] private bool playOnEnable;
+    public bool onEventEnd;
 
     // private variables
     private int current_event;
     private Coroutine event_coroutine;
-    private Dictionary<string, EventTarget> event_objects = new();
+    private readonly Dictionary<string, EventTarget> event_objects = new();
 
     private void Awake()
     {
@@ -32,6 +32,7 @@ public class EventPlayer : MonoBehaviour
         }
 
         dialogue = FindAnyObjectByType<DialogueSystem>(FindObjectsInactive.Include);
+        onEventEnd = false;
     }
 
     private void OnEnable()
@@ -65,6 +66,7 @@ public class EventPlayer : MonoBehaviour
             current_event++;
         }
 
+        onEventEnd = true;
         event_coroutine = null;
     }
 
