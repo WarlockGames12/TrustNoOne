@@ -19,7 +19,11 @@ public class CheckNPCEvent : GameEvent
         if (!target.TryGetComponent<NpcList>(out var npc_list))
             yield break;
 
+        var character = npc_list.Current;
         npc_list.RemoveCharacterFromList(npc_list.CurrentID, killed);
+
+        yield return new WaitForSeconds(0.5f);
+        Destroy(character.gameObject);
 
         yield return null;
     }

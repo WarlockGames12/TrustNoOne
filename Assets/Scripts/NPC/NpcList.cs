@@ -16,8 +16,8 @@ public class NpcList : MonoBehaviour
     private readonly List<NpcRole> alive_humans = new();
     private readonly List<NpcRole> alive_robots = new();
 
-    public string CurrentID {get; private set;}
-    public NpcRole Current {get; private set;}
+    public string CurrentID { get; private set;}
+    public NpcRole Current { get; private set;}
 
     private void Awake()
     {
@@ -34,18 +34,25 @@ public class NpcList : MonoBehaviour
         var character = npc[index];
         npc.RemoveAt(index);
 
-        CurrentID = character.ID;
-        Current = character;
-
         return character;
+    }
+
+    public void SetCurrentSpawned(NpcRole spawned_instance)
+    {
+        if (spawned_instance == null || string.IsNullOrEmpty(spawned_instance.ID))
+            return;
+        
+        CurrentID = spawned_instance.ID;
+        Current = spawned_instance;
+
+        npc_dic[spawned_instance.ID] = spawned_instance;
     }
 
     public void RegisterCharacter(NpcRole character)
     {
         if (character == null || string.IsNullOrEmpty(character.ID))
             return;
-        if (!npc_dic.ContainsKey(character.ID))
-            npc_dic.Add(character.ID, character);
+        npc_dic[character.ID] = character;
     }
 
     public void RemoveCharacterFromList(string id, bool killed)

@@ -21,7 +21,9 @@ public class SpawnEvent : GameEvent
             yield break;
         
         var point = eventPlayer.GetTransform();
-        Instantiate(pref, point.transform.position, point.transform.rotation);
+        var instance = Instantiate(pref, point.transform.position, point.transform.rotation);
+
+        npc_list.SetCurrentSpawned(instance.GetComponent<NpcRole>());
         yield return null;
     }
 }

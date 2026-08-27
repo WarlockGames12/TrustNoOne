@@ -15,8 +15,8 @@ public class ReactivateEvent : GameEvent
         
         if (!target.TryGetComponent<EventPlayer>(out var target_event_player))
             yield break;
-            
-        target_event_player.PlayEvent();
+
+        target_event_player.RestartEvent();
         yield return null;
     }
 }

@@ -40,7 +40,11 @@ public class EventPlayer : MonoBehaviour
     private void OnEnable()
     {
         if (playOnEnable)
+        {
+            onEventEnd = false;
+            current_event = 0;
             PlayEvent();
+        }
     }
 
     private void Start()
@@ -52,9 +56,26 @@ public class EventPlayer : MonoBehaviour
     public void PlayEvent()
     {
         if (event_coroutine != null)
-            return;
+        {
+            StopCoroutine(event_coroutine);
+            event_coroutine = null;
+        }
         
         current_event = 0;
+        event_coroutine = StartCoroutine(PlayEvents());
+    }
+
+    public void RestartEvent()
+    {
+        if (event_coroutine != null)
+        {
+            StopCoroutine(event_coroutine);
+            event_coroutine = null;
+        }
+
+        current_event = 0;
+        onEventEnd = false;
+
         event_coroutine = StartCoroutine(PlayEvents());
     }
 
@@ -63,7 +84,11 @@ public class EventPlayer : MonoBehaviour
         while (current_event < events.Length)
         {
             if (events[current_event] != null)
+            {
+                Debug.Log(events[current_event]);
                 yield return events[current_event].Execute(this);
+            }
+                
 
             current_event++;
         }

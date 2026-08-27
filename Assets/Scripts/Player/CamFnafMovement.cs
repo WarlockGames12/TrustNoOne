@@ -100,6 +100,7 @@ public class CamFnafMovement : MonoBehaviour
         switch (current_pointed_layer)
         {
             case PointedLayer.Shotgun:
+                Debug.Log("Play Shotgun Event");
                 eventPlayer[0].PlayEvent();
                 break;
             case PointedLayer.Valve:
