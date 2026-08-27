@@ -16,6 +16,9 @@ public class NpcList : MonoBehaviour
     private readonly List<NpcRole> alive_humans = new();
     private readonly List<NpcRole> alive_robots = new();
 
+    public string CurrentID {get; private set;}
+    public NpcRole Current {get; private set;}
+
     private void Awake()
     {
         foreach(var character in npc)
@@ -30,6 +33,9 @@ public class NpcList : MonoBehaviour
         var index = Random.Range(0, npc.Count);
         var character = npc[index];
         npc.RemoveAt(index);
+
+        CurrentID = character.ID;
+        Current = character;
 
         return character;
     }

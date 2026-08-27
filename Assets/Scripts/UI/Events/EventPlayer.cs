@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EventPlayer : MonoBehaviour
@@ -9,6 +10,7 @@ public class EventPlayer : MonoBehaviour
     [SerializeField] private DialogueSystem dialogue;
     [SerializeField] private Animator eventAnim;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private AudioSource audioEvent;
 
     [Header("Event Player Settings:")]
     [SerializeField] private GameEvent[] events;
@@ -56,7 +58,7 @@ public class EventPlayer : MonoBehaviour
         event_coroutine = StartCoroutine(PlayEvents());
     }
 
-    private IEnumerator PlayEvents()
+    public IEnumerator PlayEvents()
     {
         while (current_event < events.Length)
         {
@@ -92,5 +94,10 @@ public class EventPlayer : MonoBehaviour
     public Transform GetTransform()
     {
         return spawnPoint;
+    }
+
+    public AudioSource GetSource()
+    {
+        return audioEvent;
     }
 }
