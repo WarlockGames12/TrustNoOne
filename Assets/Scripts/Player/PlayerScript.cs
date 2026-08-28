@@ -28,6 +28,8 @@ public class PlayerScript : MonoBehaviour
     private bool is_sprinting;
     private float footstep_timer;
 
+    private bool can_interact;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {

@@ -8,6 +8,7 @@ public class NpcList : MonoBehaviour
     [SerializeField] private List<NpcRole> npc;
     [SerializeField] private GameObject afterListEvent;
     [SerializeField] private GameObject pointEvent;
+    public int money;
 
     // private variables
     private readonly Dictionary<string, NpcRole> npc_dic = new();
@@ -88,8 +89,21 @@ public class NpcList : MonoBehaviour
 
         if (npc_dic.Count <= 0)
         {
+            if (alive_humans.Count > 0 || deceased_robots.Count > 0)
+            {
+                var plus = alive_humans.Count + deceased_robots.Count;
+                var calculate = plus - deceased_humans.Count;
+                var result_money = money * calculate;
+                PlayerPrefs.SetInt("Result_Money", result_money);
+            }
+
+            if (alive_robots.Count >= 0)
+                PlayerPrefs.SetInt("Alive_Robots", alive_robots.Count);
+            else if (alive_robots.Count == 0)
+                PlayerPrefs.SetInt("No_Robots_Got_In", 0);
+            
+            PlayerPrefs.SetInt("Has_Save", 1); 
             afterListEvent.SetActive(true);
-            pointEvent.SetActive(false);
         }
     }
 }

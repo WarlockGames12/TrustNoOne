@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: InteractionInnocents1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   dialogueEntries:
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: The Priest
     speakerDescription: '"The Innocents that are in need for medical equipment..."'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: The Priest
     speakerDescription: '"That is my duty as a priest!"'
   dialogueOptions:

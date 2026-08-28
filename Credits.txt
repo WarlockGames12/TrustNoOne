@@ -4,13 +4,17 @@ Programmed by:    Dirk
 Music Created by: Dirk
 		  DraTheBean
 Models Made by:   DraTheBean
+		  Poly Elina
 Sound Effects:    Pixabay:
 			- EAGLAXLE
 			- Freesound Community
 			- DRAGON-STUDIO
 			- oxidvideos
 			- thekids15
+Voice Used: Partic
 Sound Effects Remixed by: Dirk
 			  DraTheBean
 Shaders:	  
 Skybox:		  BG_Studio
+
+

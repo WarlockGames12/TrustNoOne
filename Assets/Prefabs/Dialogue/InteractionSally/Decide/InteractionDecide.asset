@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: InteractionDecide
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   dialogueEntries:
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 1.25
     speakerName: 'Sunburn Sally:'
     speakerDescription: '"DECIDE?!, WHAT DO YOU MEAN DECIDE!?"'
   dialogueOptions: []

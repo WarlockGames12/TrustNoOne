@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: InteractionHurt1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   dialogueEntries:
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: 'Priest:'
     speakerDescription: '"I am here for anyone that needs care..."'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: 'Priest:'
     speakerDescription: '"I came here with medical equipment..."'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: 'Priest:'
     speakerDescription: '"Meaning to heal..."'
   dialogueOptions:

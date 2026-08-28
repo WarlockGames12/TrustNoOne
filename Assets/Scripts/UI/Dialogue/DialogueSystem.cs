@@ -81,7 +81,7 @@ public class DialogueSystem : MonoBehaviour
         }
 
         // Let the typing commence
-        type_routine = StartCoroutine(TypeLine(entry.speakerDescription, entry.speakerVoice));
+        type_routine = StartCoroutine(TypeLine(entry.speakerDescription, entry.speakerVoice, entry.voicePitch));
     }
 
     private void CompleteCurrentLine()
@@ -131,7 +131,6 @@ public class DialogueSystem : MonoBehaviour
             if (i >= buttonPlaces.Length)
                 break;
             
-            // 
             var button = Instantiate(dialogueButtons, buttonPlaces[i]);
             button.transform.localPosition = Vector3.zero;
 
@@ -167,7 +166,7 @@ public class DialogueSystem : MonoBehaviour
         active_dialogue_buttons.Clear();
     }
 
-    private IEnumerator TypeLine(string dialogueLine, AudioClip voiceClip)
+    private IEnumerator TypeLine(string dialogueLine, AudioClip voiceClip, float pitch)
     {
         is_typing = true;
         speakerDescription.text = "";
@@ -176,6 +175,7 @@ public class DialogueSystem : MonoBehaviour
         {
             typingSound.Stop();
             typingSound.clip = voiceClip;
+            typingSound.pitch = pitch;
             typingSound.loop = true;
             typingSound.Play();
         }

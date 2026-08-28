@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: InteractionPriest
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   dialogueEntries:
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: 'The Priest:'
     speakerDescription: '"And So Shall thou open this door..."'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: 'The Priest:'
     speakerDescription: '"I''ve been called by the eyes of god to help the innocents..."'
   dialogueOptions:

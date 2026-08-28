@@ -11,6 +11,7 @@ public class DialogueBox : ScriptableObject
     {
         [Header("Dialogue Settings:")]
         public AudioClip speakerVoice;
+        [Range(0.75f, 1.5f)] public float voicePitch; 
         public string speakerName;
         [TextArea(3, 10)] public string speakerDescription;
     }

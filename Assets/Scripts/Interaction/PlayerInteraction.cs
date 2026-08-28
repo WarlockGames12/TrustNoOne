@@ -1,0 +1,66 @@
+using UnityEngine;
+using UnityEngine.Events;
+
+public class PlayerInteraction : MonoBehaviour
+{
+
+    [Header("Player Interaction Settings:")]
+    [SerializeField] private GameObject pressE;
+    [SerializeField] private UnityEvent events;
+
+    [Header("Sound Effects if Needed:")]
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioClip[] audioClips;
+
+    [Header("If Needed, Animation Settings:")]
+    [SerializeField] private Animator anim;
+    [SerializeField] private string animString;
+
+    private bool can_activate;
+    private bool anim_bool = true;
+
+    // Update is called once per frame
+    private void Update()
+    {
+        if (anim != null)
+            anim_bool = anim.GetBool(animString);
+        if (Input.GetKeyDown(KeyCode.E) && can_activate)
+            events?.Invoke();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            can_activate = true;
+            if (pressE != null)
+                pressE.SetActive(can_activate);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            can_activate = false;
+            if (pressE != null)
+                pressE.SetActive(can_activate);
+        }
+    }
+
+    public void SetBoolAnim()
+    {
+        anim_bool = !anim_bool;
+        anim.SetBool(animString, anim_bool);
+    }
+
+    public void DoorSound()
+    {
+        if (!anim_bool)
+            soundSource.clip = audioClips[0];
+        else
+            soundSource.clip = audioClips[1];
+
+        soundSource.Play();
+    }
+}

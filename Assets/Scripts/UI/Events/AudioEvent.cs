@@ -26,14 +26,13 @@ public class AudioEvent : GameEvent
 
     public override IEnumerator Execute(EventPlayer eventPlayer)
     {
-        AudioSource source = null;
+        var source = eventPlayer.GetSource();
 
         switch (audioStatus)
         {
             case AudioStatus.One:
-                var get_source = eventPlayer.GetSource();
-                get_source.clip = audioOnceClip;
-                get_source.Play();
+                source.clip = audioOnceClip;
+                source.Play();
                 break;
             case AudioStatus.List:
                 var target = eventPlayer.GetTarget(listID);
@@ -65,9 +64,6 @@ public class AudioEvent : GameEvent
         }
 
         if (waitForFinish && source != null)
-        {
-            yield return null;
             yield return new WaitWhile(() => source.isPlaying);
-        }
     }
 }

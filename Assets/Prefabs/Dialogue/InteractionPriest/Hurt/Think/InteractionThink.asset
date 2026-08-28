@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: InteractionThink
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   dialogueEntries:
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: 'Priest:'
     speakerDescription: '"I see, my child..."'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: 'Priest:'
     speakerDescription: '"It must be hard be deciding who gets in or out..."'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
     speakerName: 'Priest:'
     speakerDescription: '"The Lord trusts you to make your decision..."'
   dialogueOptions: []

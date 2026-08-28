@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f619c19aaf91e7447b3c04a4ac600c69, type: 3}
   m_Name: ValveTurn
   m_EditorClassIdentifier: Assembly-CSharp::AudioEvent
-  audioOnceClip: {fileID: 0}
+  audioOnceClip: {fileID: 8300000, guid: 2cf42da5e30e299418ddb30ffc2b0498, type: 3}
   listID: 
   audioClips: []
   audioStatus: 0

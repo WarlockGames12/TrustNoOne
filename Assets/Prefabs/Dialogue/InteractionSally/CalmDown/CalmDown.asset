@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: CalmDown
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   dialogueEntries:
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 1.25
     speakerName: 'Sunburn Sally:'
     speakerDescription: '"THERE''S SOMEONE FOLLOWING ME!"'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 1.25
     speakerName: 'Sunburn Sally:'
     speakerDescription: '"I CAN''T SHAKE THEM OFF!"'
-  - speakerVoice: {fileID: 0}
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 1.25
     speakerName: 'Sunburn Sally:'
     speakerDescription: '"PLEASE LET ME IN, I WON''T BOTHER ANYONE, I SWEAR!"'
   dialogueOptions: []
