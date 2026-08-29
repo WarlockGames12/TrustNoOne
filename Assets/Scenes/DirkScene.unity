@@ -11814,8 +11814,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0400772, y: 2.7109208, z: 1.5671029}
+  m_Center: {x: 0.020038605, y: 0.85546017, z: -0.28355145}
 --- !u!23 &450809896
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11823,7 +11823,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450809894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11932,6 +11932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   playerSpeed: 5
   sprintMultiplier: 1.5
+  playerAnim: {fileID: 8804168183991385563}
+  rotationMovement: 90
   rb: {fileID: 450809899}
   jumpSource: {fileID: 391583714}
   jumpOrLand:
@@ -75940,7 +75942,7 @@ Animator:
   m_GameObject: {fileID: 8804168183991385562}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e1f8a35cebd98148afbdfb8443128e1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -2408,6 +2408,10 @@ MonoBehaviour:
   - {fileID: 6681451351848310075, guid: afd87c7ce3166ed4eadf3f0b31745c73, type: 3}
   - {fileID: -100318675194015929, guid: 8768cc6dd3d2d3f418efda094e053a07, type: 3}
   - {fileID: 4780885977672759435, guid: 6663a35f96bfb4f4ebf8e8cf9a040d43, type: 3}
+  npc1:
+  - {fileID: 0}
+  npc2:
+  - {fileID: 0}
   afterListEvent: {fileID: 1370284015}
   pointEvent: {fileID: 428142276}
   guaranteedMoney: 100
@@ -9855,6 +9859,7 @@ MonoBehaviour:
   shotgunShellCount: 3
   needMoney: 0
   moneyText: {fileID: 0}
+  isMenu: 0
   current_shell_count: 3
 --- !u!114 &2042477821
 MonoBehaviour:

@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
     [Header("Player Settings:")]
     [SerializeField, Range(0, 100)] private float playerSpeed; 
     [SerializeField, Range(0, 100)] private float sprintMultiplier;
+    [SerializeField] private Animator playerAnim;
+    [SerializeField, Range(0, 100)] private float rotationMovement;
     [SerializeField] private Rigidbody rb;
 
     [Header("Player Jump Settings:")]
@@ -29,6 +31,7 @@ public class PlayerScript : MonoBehaviour
     private float footstep_timer;
 
     private bool can_interact;
+    private bool was_grounded;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -40,22 +43,67 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         var on_ladder = OnLadder();
+        var grounded = IsGrounded();
         var hor = Input.GetAxisRaw("Horizontal");
+
+        UpdateFacingDirection(hor);
 
         is_sprinting = Input.GetKey(KeyCode.LeftShift);
         var speed = playerSpeed * (is_sprinting ? sprintMultiplier : 1);
+
+        float animSpeed = 0f;
+
+        if (Mathf.Abs(hor) > 0.01f)
+            animSpeed = is_sprinting ? 2f : 1f;
+
+        playerAnim.SetFloat("Speed", animSpeed);
 
         var movement = hor * speed * Time.fixedDeltaTime * Vector3.right;
         if (on_ladder)
         {
             var ver = Input.GetAxisRaw("Vertical");
             movement += ver * playerSpeed * Time.fixedDeltaTime * Vector3.up;
+
+            playerAnim.SetBool("IsClimbing", true);
+            playerAnim.SetBool("IsFalling", false); 
+            playerAnim.speed = Mathf.Abs(ver);
         }
+        else 
+        {
+            playerAnim.SetBool("IsClimbing", false);
+            playerAnim.speed = 1f;
+        }
+        
 
         rb.MovePosition(rb.position + movement);
         rb.useGravity = !on_ladder;
 
         Footsteps(on_ladder);
+
+        // Check for falling
+        if (!grounded && !on_ladder)
+            playerAnim.SetBool("IsFalling", true);
+        
+        // check if landed
+        if (grounded && !was_grounded)
+        {
+            playerAnim.SetTrigger("Landed");
+            playerAnim.SetBool("IsFalling", false);
+        }
+        was_grounded = grounded;
+    }
+
+    private void UpdateFacingDirection(float hor_input)
+    {
+        var on_ladder = OnLadder();
+        if (hor_input > 0f && !on_ladder)
+            playerAnim.transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+        else if (hor_input < 0f && !on_ladder)
+            playerAnim.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+        else if (on_ladder)
+        {
+            playerAnim.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+        }
     }
 
     private void Footsteps(bool on_ladder)
@@ -97,6 +145,7 @@ public class PlayerScript : MonoBehaviour
             jumpSource.pitch = Random.Range(0.75f, 1.25f);
             jumpSource.clip = jumpOrLand[0];
             jumpSource.Play();
+            playerAnim.SetTrigger("Jump");
             
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }

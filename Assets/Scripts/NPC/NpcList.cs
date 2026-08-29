@@ -6,6 +6,8 @@ public class NpcList : MonoBehaviour
 {
     [Header("NPC Settings:")]
     [SerializeField] private List<NpcRole> npc;
+    [SerializeField] private List<NpcRole> npc1;
+    [SerializeField] private List<NpcRole> npc2;
     [SerializeField] private GameObject afterListEvent;
     [SerializeField] private GameObject pointEvent;
     [SerializeField, Range(0, 1000)] private int guaranteedMoney;
@@ -20,21 +22,43 @@ public class NpcList : MonoBehaviour
     public string CurrentID { get; private set;}
     public NpcRole Current { get; private set;}
     private int shift_day;
+    private int current_index;
+    private List<NpcRole> current_list;
 
     private void Awake()
     {
-        foreach(var character in npc)
-            RegisterCharacter(character);
+        switch (shift_day)
+        {
+            case 1:
+                current_index = npc.Count;
+                current_list = npc;
+                foreach(var character in npc)
+                    RegisterCharacter(character);
+                break;
+            case 2: 
+                current_index = npc1.Count;
+                current_list = npc1;
+                foreach(var character in npc1)
+                    RegisterCharacter(character);
+                break;
+            case 3:
+                current_index = npc2.Count;
+                current_list = npc2;
+                foreach(var character in npc2)
+                    RegisterCharacter(character);
+                break;
+        }
+        
     }
 
     public NpcRole GetCharacterToSpawn()
     {
-        if (npc.Count <= 0)
+        if (current_list.Count <= 0)
             return null;
         
-        var index = Random.Range(0, npc.Count);
-        var character = npc[index];
-        npc.RemoveAt(index);
+        var index = Random.Range(0, current_index);
+        var character = current_list[index];
+        current_list.RemoveAt(index);
 
         return character;
     }
@@ -105,7 +129,7 @@ public class NpcList : MonoBehaviour
                     PlayerPrefs.SetInt("Result_Money", result_money);
             }
 
-            if (alive_robots.Count >= 0)
+            if (alive_robots.Count > 0)
                 PlayerPrefs.SetInt("Alive_Robots", alive_robots.Count);
             else if (alive_robots.Count == 0)
                 PlayerPrefs.SetInt("No_Robots_Got_In", 0);
