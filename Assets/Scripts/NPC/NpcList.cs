@@ -102,9 +102,7 @@ public class NpcList : MonoBehaviour
                     PlayerPrefs.SetInt("Result_Money", result_money);
                 }
                 else
-                {
                     PlayerPrefs.SetInt("Result_Money", result_money);
-                }
             }
 
             if (alive_robots.Count >= 0)
