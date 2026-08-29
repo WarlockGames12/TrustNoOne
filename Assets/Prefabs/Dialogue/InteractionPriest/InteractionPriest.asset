@@ -21,9 +21,11 @@ MonoBehaviour:
     voicePitch: 0.85
     speakerName: 'The Priest:'
     speakerDescription: '"I''ve been called by the eyes of god to help the innocents..."'
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 0.85
+    speakerName: 'The Priest:'
+    speakerDescription: '"I came here with medical equipment..."'
   dialogueOptions:
-  - optionText: Who's Hurt?
-    nextDialogue: {fileID: 11400000, guid: 9505199315b6f6240aef3363fa5c017c, type: 2}
-  - optionText: Which Innocents?
-    nextDialogue: {fileID: 11400000, guid: e6a19df2ff3734943b70845a52302adf, type: 2}
+  - optionText: Medical Equipment, that is quite rare.
+    nextDialogue: {fileID: 11400000, guid: 0fa98cd4c5bf50b4fa3dc2ab4bf96ddf, type: 2}
   anotherEvent: 0

@@ -73,12 +73,14 @@ MonoBehaviour:
   dialogue: {fileID: 0}
   eventAnim: {fileID: 6649661201369232865}
   spawnPoint: {fileID: 0}
+  audioEvent: {fileID: 0}
   events:
   - {fileID: 11400000, guid: ffbb0acf8f7fc984482af36790913cf2, type: 2}
   - {fileID: 11400000, guid: 8683e9b7b301e604c8634cd596cf358d, type: 2}
   - {fileID: 11400000, guid: 7ba9dc1709918144f8463f12713e3a10, type: 2}
   playOnStart: 1
   playOnEnable: 0
+  onEventEnd: 0
 --- !u!114 &6681451351848310075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcRole
   id: Sally
   roles: 1
+  gender: 0
 --- !u!1 &1513656880620173647
 GameObject:
   m_ObjectHideFlags: 0

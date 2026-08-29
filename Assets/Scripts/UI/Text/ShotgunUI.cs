@@ -8,11 +8,19 @@ public class ShotgunUI : MonoBehaviour
     [SerializeField] private Text shotgunText;
     [SerializeField, Range(0, 5)] private int shotgunShellCount;
 
+    [Header("Money Settings:")]
+    [SerializeField] private bool needMoney;
+    [SerializeField] private Text moneyText;
+
     public int current_shell_count;
+    private int money;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        if (needMoney)
+            money = PlayerPrefs.GetInt("Result_Money");
+
         if (PlayerPrefs.HasKey("Current_Shell_Count"))
             current_shell_count = PlayerPrefs.GetInt("Current_Shell_Count");
         else
@@ -20,6 +28,12 @@ public class ShotgunUI : MonoBehaviour
 
         if (shotgunText != null)
             shotgunText.text = "Shells: " + current_shell_count + "/" + shotgunShellCount;
+    }
+
+    private void Update()
+    {
+        if (needMoney)
+            moneyText.text = "$" + money;
     }
 
     public void Shoot()
@@ -30,7 +44,7 @@ public class ShotgunUI : MonoBehaviour
             current_shell_count--;
         
         if (shotgunText != null)
-            shotgunText.text = "Shells: " + current_shell_count;
+            shotgunText.text = "Shells: " + current_shell_count + "/" + shotgunShellCount;
 
         PlayerPrefs.SetInt("Current_Shell_Count", current_shell_count);
     }
@@ -41,7 +55,7 @@ public class ShotgunUI : MonoBehaviour
             return;
         else
         {
-            var money = PlayerPrefs.GetInt("Result_Money");
+            money = PlayerPrefs.GetInt("Result_Money");
             var shell_count = PlayerPrefs.GetInt("Current_Shell_Count");
 
             if (money < cost_shell)

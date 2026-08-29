@@ -15,7 +15,11 @@ MonoBehaviour:
   dialogueEntries:
   - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
     voicePitch: 1.25
-    speakerName: 'Sunburn Sally:'
+    speakerName: 'Scared Woman:'
     speakerDescription: '"DECIDE?!, WHAT DO YOU MEAN DECIDE!?"'
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 1.25
+    speakerName: 'Scared Woman:'
+    speakerDescription: '"THERE ARE ROBOTS COMING IN HOT! COME ON..."'
   dialogueOptions: []
   anotherEvent: 0

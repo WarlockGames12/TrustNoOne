@@ -8,5 +8,8 @@ public class ButtonScript : MonoBehaviour
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(scene);
     }
+
+    public void ChangeScenes(string scene) => SceneManager.LoadScene(scene);
+    public void RemoveHasSave() => PlayerPrefs.DeleteKey("Has_Save");
     public void ExitGame() => Application.Quit();
 }

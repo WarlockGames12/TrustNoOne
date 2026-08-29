@@ -15,15 +15,17 @@ MonoBehaviour:
   dialogueEntries:
   - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
     voicePitch: 1.25
-    speakerName: 'Sunburn Sally:'
+    speakerName: 'Scared Woman:'
     speakerDescription: '"THERE''S SOMEONE FOLLOWING ME!"'
   - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
     voicePitch: 1.25
-    speakerName: 'Sunburn Sally:'
+    speakerName: 'Scared Woman:'
     speakerDescription: '"I CAN''T SHAKE THEM OFF!"'
   - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
     voicePitch: 1.25
-    speakerName: 'Sunburn Sally:'
+    speakerName: 'Scared Woman:'
     speakerDescription: '"PLEASE LET ME IN, I WON''T BOTHER ANYONE, I SWEAR!"'
-  dialogueOptions: []
+  dialogueOptions:
+  - optionText: How many?
+    nextDialogue: {fileID: 11400000, guid: 63e592e131094c9439ea18ee9c05844b, type: 2}
   anotherEvent: 0

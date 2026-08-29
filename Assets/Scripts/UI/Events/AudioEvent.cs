@@ -47,16 +47,13 @@ public class AudioEvent : GameEvent
 
                 source = eventPlayer.GetSource();
 
-                switch (npc_list.Current.gender)
+                switch (npc_list.Current.roles)
                 {
-                    case Gender.Male:
+                    case RoleType.Human:
                         source.clip = audioClips[0];
                         break;
-                    case Gender.Female:
+                    case RoleType.Robot:
                         source.clip = audioClips[1];
-                        break;
-                    case Gender.Child:
-                        source.clip = audioClips[2];
                         break;
                 }
                 source.Play();

@@ -15,11 +15,11 @@ MonoBehaviour:
   dialogueEntries:
   - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
     voicePitch: 1.25
-    speakerName: Sunburn Sally
+    speakerName: 'Scared Woman:'
     speakerDescription: '"PLEASE LET ME IN!"'
   - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
     voicePitch: 1.25
-    speakerName: Sunburn Sally
+    speakerName: 'Scared Woman:'
     speakerDescription: '"PLEASE LET ME LET ME LET ME!"'
   dialogueOptions:
   - optionText: Woah there, calm down.

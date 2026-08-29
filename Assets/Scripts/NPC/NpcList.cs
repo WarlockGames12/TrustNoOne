@@ -8,7 +8,7 @@ public class NpcList : MonoBehaviour
     [SerializeField] private List<NpcRole> npc;
     [SerializeField] private GameObject afterListEvent;
     [SerializeField] private GameObject pointEvent;
-    public int money;
+    [SerializeField, Range(0, 1000)] private int guaranteedMoney;
 
     // private variables
     private readonly Dictionary<string, NpcRole> npc_dic = new();
@@ -94,7 +94,7 @@ public class NpcList : MonoBehaviour
             {
                 var plus = alive_humans.Count + deceased_robots.Count;
                 var calculate = plus - deceased_humans.Count;
-                var result_money = money * calculate;
+                var result_money = guaranteedMoney * calculate;
                 if (PlayerPrefs.HasKey("Result_Money"))
                 {
                     var get_money = PlayerPrefs.GetInt("Result_Money");

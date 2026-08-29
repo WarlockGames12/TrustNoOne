@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a311bb6270eaaa546b7f6a8f69d86167, type: 3}
+  m_Name: SillyBilly
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
+  dialogueEntries:
+  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
+    voicePitch: 1
+    speakerName: 'Silly Billy:'
+    speakerDescription: '"Uhuh...my mother always called me that..."'
+  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
+    voicePitch: 1
+    speakerName: 'Silly Billy:'
+    speakerDescription: '"I miss her..."'
+  dialogueOptions:
+  - optionText: Let me think about it...
+    nextDialogue: {fileID: 11400000, guid: 7c059dc706f155b4cb87caf72990018b, type: 2}
+  anotherEvent: 0

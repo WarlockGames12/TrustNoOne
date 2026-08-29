@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioEvent
   audioOnceClip: {fileID: 0}
   listID: NPCList
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 7c8a33807b994434c976aba6d90c168a, type: 3}
+  - {fileID: 8300000, guid: fae3c65bb0a1ee145a01bb23528f381c, type: 3}
   audioStatus: 1
+  waitForFinish: 1

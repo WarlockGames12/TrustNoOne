@@ -15,27 +15,12 @@ MonoBehaviour:
   dialogueEntries:
   - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
     voicePitch: 1
-    speakerName: 'Silly Billy:'
-    speakerDescription: '"Hey-Hey...It''s me...the most Silliest of Billy..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: 'Silly Billy:'
-    speakerDescription: '"I came here to just..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: 'Silly Billy:'
-    speakerDescription: '"AHEM..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: 'Silly Billy:'
-    speakerDescription: '"Visit my dearest mother..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: 'Silly Billy:'
-    speakerDescription: '"Silly...I know..."'
+    speakerName: '???:'
+    speakerDescription: '"Hewwo! I brought you a dead pigeon and a stop sign I stole!
+      As a trade, can I use your xbox!"'
   dialogueOptions:
-  - optionText: Right...Visit your Mother...
-    nextDialogue: {fileID: 0}
-  - optionText: Are you sure you won't cause chaos?
-    nextDialogue: {fileID: 0}
+  - optionText: What?
+    nextDialogue: {fileID: 11400000, guid: 4661ec3dbdcf7c54cb8b882e66a0d9db, type: 2}
+  - optionText: A Dead Pidgeon? That's a rare find.
+    nextDialogue: {fileID: 11400000, guid: 614b69867ac1c234f8023a731c565b30, type: 2}
   anotherEvent: 0

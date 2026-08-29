@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a311bb6270eaaa546b7f6a8f69d86167, type: 3}
+  m_Name: Lots
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
+  dialogueEntries:
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 1.25
+    speakerName: 'Scared Woman:'
+    speakerDescription: '"I don''t know..."'
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 1.25
+    speakerName: 'Scared Woman:'
+    speakerDescription: '"I...I lost count...they came around the horizon..."'
+  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
+    voicePitch: 1.25
+    speakerName: 'Scared Woman:'
+    speakerDescription: '"I had to be quick...I couldn''t look back..."'
+  dialogueOptions:
+  - optionText: Right...Just a second...
+    nextDialogue: {fileID: 11400000, guid: c0d7aed48a8636c4099bf8171c085144, type: 2}
+  anotherEvent: 0
