@@ -19,6 +19,7 @@ public class PlayerInteraction : MonoBehaviour
 
     [Header("Different Interact")]
     [SerializeField] private bool different_interaction;
+    [SerializeField] private Animator fade;
     [SerializeField] private EventPlayer[] eventPlayer;
 
     private bool can_activate;
@@ -39,10 +40,16 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && can_activate)
             events?.Invoke();
 
-        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && PlayerPrefs.HasKey("Has_Save") && !PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots"))
+        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && !PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots"))
+        {
+            fade.SetBool("Fade", true);
             eventPlayer[0].PlayEvent();
-        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && PlayerPrefs.HasKey("Has_Save") && PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots"))
+        }
+        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots"))
+        {
+            fade.SetBool("Fade", true);
             eventPlayer[1].PlayEvent();
+        }       
     }
 
     private void OnTriggerEnter(Collider other)

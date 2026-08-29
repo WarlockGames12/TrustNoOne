@@ -17,7 +17,7 @@ public class AlarmEvent : MonoBehaviour
     [SerializeField] private GameObject winCondition;
     [SerializeField] private GameObject endGame;
 
-    private bool alarm_enabled;
+    public bool alarm_enabled;
     private float time_left;
     private int shift;
 

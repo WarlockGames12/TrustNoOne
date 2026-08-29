@@ -11,6 +11,7 @@ public class ShotgunUI : MonoBehaviour
     [Header("Money Settings:")]
     [SerializeField] private bool needMoney;
     [SerializeField] private Text moneyText;
+    [SerializeField] private bool isMenu;
 
     public int current_shell_count;
     private int money;
@@ -34,6 +35,9 @@ public class ShotgunUI : MonoBehaviour
     {
         if (needMoney)
             moneyText.text = "$" + money;
+
+        if (isMenu)
+            shotgunText.text = "Shells: " + current_shell_count + "/" + shotgunShellCount;
     }
 
     public void Shoot()
