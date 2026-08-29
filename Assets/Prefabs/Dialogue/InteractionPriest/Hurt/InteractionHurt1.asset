@@ -29,5 +29,5 @@ MonoBehaviour:
   - optionText: Let me decide to think
     nextDialogue: {fileID: 11400000, guid: 68b2908bc40747e4dac3bc3fdf80144b, type: 2}
   - optionText: Equipment? How did you find them?
-    nextDialogue: {fileID: 0}
+    nextDialogue: {fileID: 11400000, guid: e1dad3f13c5b83d43bff8f7c257aa9f2, type: 2}
   anotherEvent: 0

@@ -94,6 +94,7 @@ public class DialogueSystem : MonoBehaviour
 
         var entry = current_dialogue.dialogueEntries[current_line_index];
         speakerDescription.text = entry.speakerDescription;
+        typingSound.Stop();
         is_typing = false;
     }
 

@@ -19,6 +19,7 @@ public class NpcList : MonoBehaviour
 
     public string CurrentID { get; private set;}
     public NpcRole Current { get; private set;}
+    private int shift_day;
 
     private void Awake()
     {
@@ -94,15 +95,29 @@ public class NpcList : MonoBehaviour
                 var plus = alive_humans.Count + deceased_robots.Count;
                 var calculate = plus - deceased_humans.Count;
                 var result_money = money * calculate;
-                PlayerPrefs.SetInt("Result_Money", result_money);
+                if (PlayerPrefs.HasKey("Result_Money"))
+                {
+                    var get_money = PlayerPrefs.GetInt("Result_Money");
+                    result_money += get_money;
+                    PlayerPrefs.SetInt("Result_Money", result_money);
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("Result_Money", result_money);
+                }
             }
 
             if (alive_robots.Count >= 0)
                 PlayerPrefs.SetInt("Alive_Robots", alive_robots.Count);
             else if (alive_robots.Count == 0)
                 PlayerPrefs.SetInt("No_Robots_Got_In", 0);
+
+            if (PlayerPrefs.HasKey("Shift_Day"))
+                shift_day = PlayerPrefs.GetInt("Shift_Day");
+            shift_day += 1;
             
-            PlayerPrefs.SetInt("Has_Save", 1); 
+            PlayerPrefs.SetInt("Has_Save", 1);
+            PlayerPrefs.SetInt("Shift_Day", shift_day); 
             afterListEvent.SetActive(true);
         }
     }

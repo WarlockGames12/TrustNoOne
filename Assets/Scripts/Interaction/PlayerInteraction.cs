@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Player Interaction Settings:")]
     [SerializeField] private GameObject pressE;
     [SerializeField] private UnityEvent events;
+    [SerializeField] private bool cantInteractAfterShift;
 
     [Header("Sound Effects if Needed:")]
     [SerializeField] private AudioSource soundSource;
@@ -18,6 +19,13 @@ public class PlayerInteraction : MonoBehaviour
 
     private bool can_activate;
     private bool anim_bool = true;
+    private bool can_activate_event = true;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Has_Save") && cantInteractAfterShift)
+            can_activate_event = false;
+    }
 
     // Update is called once per frame
     private void Update()
@@ -30,7 +38,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && can_activate_event)
         {
             can_activate = true;
             if (pressE != null)
@@ -40,7 +48,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && can_activate_event)
         {
             can_activate = false;
             if (pressE != null)

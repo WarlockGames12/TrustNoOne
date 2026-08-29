@@ -20,6 +20,9 @@ public class CamFnafMovement : MonoBehaviour
     [SerializeField] private LayerMask shotgunMask;
     [SerializeField] private LayerMask valveMask;
 
+    [Header("Shotgun Shells:")]
+    [SerializeField] private ShotgunUI shotgun;
+
     [Header("Raycast Settings:")]
     [SerializeField] private Camera raycastCam;
     [SerializeField, Range(0, 100)] private float rayDistance;
@@ -97,10 +100,12 @@ public class CamFnafMovement : MonoBehaviour
 
     private void HandleClick()
     {
+        
         switch (current_pointed_layer)
         {
             case PointedLayer.Shotgun:
-                Debug.Log("Play Shotgun Event");
+                if (shotgun.current_shell_count <= 0)
+                    return;
                 eventPlayer[0].PlayEvent();
                 break;
             case PointedLayer.Valve:
