@@ -41,6 +41,8 @@ public class AlarmEvent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        Debug.Log("Current day: " + shift);
+
         if (alarm_enabled)
         {
             time_left -= Time.deltaTime;
@@ -61,7 +63,6 @@ public class AlarmEvent : MonoBehaviour
             PlayerPrefs.DeleteKey("Alive_Robots");
         }
     }
-
     public void DisableAlarm()
     {
         if (shift >= 3)

@@ -167,7 +167,7 @@ MonoBehaviour:
   events:
   - {fileID: 11400000, guid: ffbb0acf8f7fc984482af36790913cf2, type: 2}
   - {fileID: 11400000, guid: 8683e9b7b301e604c8634cd596cf358d, type: 2}
-  - {fileID: 11400000, guid: 9dc08c85df2a3d448ae54325d74670b4, type: 2}
+  - {fileID: 11400000, guid: 53d8e27958a69e84887d4cc5f0ee194b, type: 2}
   playOnStart: 1
   playOnEnable: 0
   onEventEnd: 0
