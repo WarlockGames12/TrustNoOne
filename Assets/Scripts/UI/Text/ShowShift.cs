@@ -10,6 +10,12 @@ public class ShowShift : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        text.text = "Shift:" + shift_day;
+        if (!PlayerPrefs.HasKey("Shift_Day"))
+            text.text = "Shift:" + shift_day;
+        else
+        {
+            shift_day = PlayerPrefs.GetInt("Shift_Day");
+            text.text = "Shift:" + shift_day;
+        }
     }
 }

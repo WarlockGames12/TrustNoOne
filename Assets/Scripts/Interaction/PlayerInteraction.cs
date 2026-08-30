@@ -9,7 +9,8 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private UnityEvent events;
     [SerializeField] private bool cantInteractAfterShift;
     [SerializeField] private bool canInteractAfterShift;
-
+    [SerializeField] private UnityEvent afterInteractEvent;
+ 
     [Header("Sound Effects if Needed:")]
     [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip[] audioClips;
@@ -27,6 +28,8 @@ public class PlayerInteraction : MonoBehaviour
     private bool anim_bool = true;
     private bool can_activate_event = true;
 
+    private int shift_day;
+
     private void Start()
     {
         if (PlayerPrefs.HasKey("Has_Save") && cantInteractAfterShift)
@@ -40,6 +43,10 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
+        if (PlayerPrefs.HasKey("Shift_Day"))
+            shift_day = PlayerPrefs.GetInt("Shift_Day");
+        
         if (anim != null)
             anim_bool = anim.GetBool(animString);
         if (Input.GetKeyDown(KeyCode.E) && can_activate)
@@ -54,7 +61,16 @@ public class PlayerInteraction : MonoBehaviour
         {
             fade.SetBool("Fade", true);
             eventPlayer[1].PlayEvent();
-        }       
+        }
+        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && PlayerPrefs.HasKey("Has_Save") && !PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots") && shift_day >= 3)
+        {
+            fade.SetBool("Fade", true);
+            eventPlayer[2].PlayEvent();
+        } 
+        if (shift_day > 3 && canInteractAfterShift)
+        {
+            afterInteractEvent?.Invoke();
+        }           
     }
 
     private void OnTriggerEnter(Collider other)

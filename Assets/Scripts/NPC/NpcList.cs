@@ -139,14 +139,10 @@ public class NpcList : MonoBehaviour
             if (PlayerPrefs.HasKey("Shift_Day"))
                 shift_day = PlayerPrefs.GetInt("Shift_Day");
             
-            if (!count_once)
-            {
-                count_once = true;
-                shift_day += 1;
-            }
+            shift_day += 1;
             
             PlayerPrefs.SetInt("Has_Save", 1);
-            PlayerPrefs.SetInt("Shift_Day", shift_day); 
+            PlayerPrefs.SetInt("Shift_Day", shift_day);
             afterListEvent.SetActive(true);
         }
     }

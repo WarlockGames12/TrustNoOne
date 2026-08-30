@@ -33,8 +33,11 @@ public class ShotgunUI : MonoBehaviour
 
     private void Update()
     {
-        if (needMoney)
+        if (needMoney && PlayerPrefs.HasKey("Result_Money"))
+        {
+            money = PlayerPrefs.GetInt("Result_Money");
             moneyText.text = "$" + money;
+        }
 
         if (isMenu)
             shotgunText.text = "Shells: " + current_shell_count + "/" + shotgunShellCount;
