@@ -226,7 +226,7 @@ Animator:
   m_GameObject: {fileID: 8153991659832058651}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d464542cb0ac92d45b99ea008b1012a9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -254,8 +254,11 @@ MonoBehaviour:
   eventAnim: {fileID: 6195434026483264179}
   spawnPoint: {fileID: 0}
   audioEvent: {fileID: 0}
-  events: []
-  playOnStart: 0
+  events:
+  - {fileID: 11400000, guid: ffbb0acf8f7fc984482af36790913cf2, type: 2}
+  - {fileID: 11400000, guid: 8683e9b7b301e604c8634cd596cf358d, type: 2}
+  - {fileID: 11400000, guid: 417eeb2ff15881b40bf5dc6ba7e4ce0d, type: 2}
+  playOnStart: 1
   playOnEnable: 0
   onEventEnd: 0
 --- !u!114 &4544097505895114619
@@ -271,5 +274,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcRole
   id: Crazy
-  roles: 2
+  roles: 1
   gender: 1

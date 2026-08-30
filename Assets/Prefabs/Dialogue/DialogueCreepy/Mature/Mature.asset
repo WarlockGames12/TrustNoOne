@@ -16,20 +16,7 @@ MonoBehaviour:
   - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
     voicePitch: 0
     speakerName: 'Creepy Old Person:'
-    speakerDescription: '"Bah...kids these days with wanting respect..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 0
-    speakerName: 'Creepy Old Person:'
-    speakerDescription: '"You ruined this planet for the worse for me..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 0
-    speakerName: 'Creepy Old Person:'
-    speakerDescription: '"Back in my day, people would have more respect to each
-      other..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 0
-    speakerName: 'Creepy Old Person:'
-    speakerDescription: '"If you had been nicer to those bots, we wouldn''t be in
-      this mess..."'
+    speakerDescription: "\"I\u2019m sorry, my mind is so scrambled from all those
+      clankers hiding amongst us\""
   dialogueOptions: []
   anotherEvent: 0

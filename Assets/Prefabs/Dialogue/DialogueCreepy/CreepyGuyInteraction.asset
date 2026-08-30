@@ -23,8 +23,8 @@ MonoBehaviour:
     speakerDescription: "\"Hurry up and unlock this door, Susan! Oh- wait\u2026 you
       arent my second wife\u2026 please just let me in\u2026\""
   dialogueOptions:
-  - optionText: Can we talk more maturely...
+  - optionText: What?!
     nextDialogue: {fileID: 11400000, guid: caddfa80738dbc749959ab48adb5a37f, type: 2}
-  - optionText: Goddammit, not him again.
+  - optionText: Are you okay sir?
     nextDialogue: {fileID: 11400000, guid: efe4e0f552ddf5c488bb038d677262d9, type: 2}
   anotherEvent: 0

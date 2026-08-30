@@ -22,27 +22,29 @@ public class NpcList : MonoBehaviour
     public string CurrentID { get; private set;}
     public NpcRole Current { get; private set;}
     private int shift_day;
-    private int current_index;
     private List<NpcRole> current_list;
+    private bool count_once;
 
     private void Awake()
     {
+        if (PlayerPrefs.HasKey("Shift_Day"))
+            shift_day = PlayerPrefs.GetInt("Shift_Day");
+        else
+            shift_day = 1;
+
         switch (shift_day)
         {
             case 1:
-                current_index = npc.Count;
                 current_list = npc;
                 foreach(var character in npc)
                     RegisterCharacter(character);
                 break;
             case 2: 
-                current_index = npc1.Count;
                 current_list = npc1;
                 foreach(var character in npc1)
                     RegisterCharacter(character);
                 break;
             case 3:
-                current_index = npc2.Count;
                 current_list = npc2;
                 foreach(var character in npc2)
                     RegisterCharacter(character);
@@ -56,7 +58,7 @@ public class NpcList : MonoBehaviour
         if (current_list.Count <= 0)
             return null;
         
-        var index = Random.Range(0, current_index);
+        var index = Random.Range(0, current_list.Count);
         var character = current_list[index];
         current_list.RemoveAt(index);
 
@@ -136,7 +138,12 @@ public class NpcList : MonoBehaviour
 
             if (PlayerPrefs.HasKey("Shift_Day"))
                 shift_day = PlayerPrefs.GetInt("Shift_Day");
-            shift_day += 1;
+            
+            if (!count_once)
+            {
+                count_once = true;
+                shift_day += 1;
+            }
             
             PlayerPrefs.SetInt("Has_Save", 1);
             PlayerPrefs.SetInt("Shift_Day", shift_day); 

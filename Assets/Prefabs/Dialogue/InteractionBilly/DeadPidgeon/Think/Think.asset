@@ -15,11 +15,11 @@ MonoBehaviour:
   dialogueEntries:
   - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
     voicePitch: 1
-    speakerName: 'Silly Billy:'
+    speakerName: 'Silly Kid:'
     speakerDescription: '"Awright then..."'
   - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
     voicePitch: 1
-    speakerName: 'Silly Billy:'
+    speakerName: 'Silly Kid:'
     speakerDescription: '"I''wait here..."'
   dialogueOptions: []
   anotherEvent: 0

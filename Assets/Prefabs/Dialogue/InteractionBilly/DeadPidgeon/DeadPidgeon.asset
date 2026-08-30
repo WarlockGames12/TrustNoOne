@@ -15,29 +15,14 @@ MonoBehaviour:
   dialogueEntries:
   - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
     voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"Nyes...it is quite rare..."'
+    speakerName: 'Silly Kid:'
+    speakerDescription: "\"Don't mind the pigeon! I made sure to stop it\u2019s breathing
+      function! Hehe.\""
   - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
     voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"My mom always told me...to always hewp others..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"She''s gowne now..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"Oh...I never told you my name..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"Its Billy...most people call me just Silly Billy..."'
+    speakerName: 'Silly Kid:'
+    speakerDescription: '"Just monch on the bones and you''ll be fine..."'
   dialogueOptions:
-  - optionText: How long have you wondered here alone?
-    nextDialogue: {fileID: 11400000, guid: 082a7fcdf760966428099d0c9987aa5b, type: 2}
-  - optionText: Silly Billy eh?
-    nextDialogue: {fileID: 11400000, guid: 39d02263ed5f15546ae6bd9cf0e8696a, type: 2}
   - optionText: Let me think about it, alright?
     nextDialogue: {fileID: 11400000, guid: 7c059dc706f155b4cb87caf72990018b, type: 2}
   anotherEvent: 0

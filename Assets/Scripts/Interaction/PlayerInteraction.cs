@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private GameObject pressE;
     [SerializeField] private UnityEvent events;
     [SerializeField] private bool cantInteractAfterShift;
+    [SerializeField] private bool canInteractAfterShift;
 
     [Header("Sound Effects if Needed:")]
     [SerializeField] private AudioSource soundSource;
@@ -30,6 +31,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("Has_Save") && cantInteractAfterShift)
             can_activate_event = false;
+        if (PlayerPrefs.HasKey("Has_Save") && canInteractAfterShift)
+            can_activate_event = true;
+        else if (!PlayerPrefs.HasKey("Has_Save") && canInteractAfterShift)
+            can_activate_event = false;
     }
 
     // Update is called once per frame
@@ -40,12 +45,12 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && can_activate)
             events?.Invoke();
 
-        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && !PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots"))
+        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && PlayerPrefs.HasKey("Has_Save") && !PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots"))
         {
             fade.SetBool("Fade", true);
             eventPlayer[0].PlayEvent();
         }
-        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots"))
+        if (Input.GetKeyDown(KeyCode.E) && can_activate && different_interaction && PlayerPrefs.HasKey("Has_Save") && PlayerPrefs.HasKey("Has_Shot") && PlayerPrefs.HasKey("Alive_Robots"))
         {
             fade.SetBool("Fade", true);
             eventPlayer[1].PlayEvent();

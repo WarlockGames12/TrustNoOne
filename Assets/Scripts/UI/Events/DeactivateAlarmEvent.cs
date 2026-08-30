@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Events/Deactivate Alarm")]
 public class DeactivateAlarmEvent : GameEvent
 {
 

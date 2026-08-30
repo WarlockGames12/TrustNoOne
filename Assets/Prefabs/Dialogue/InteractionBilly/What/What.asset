@@ -15,21 +15,8 @@ MonoBehaviour:
   dialogueEntries:
   - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
     voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"A Dead Pidgeon...and a stop sign"'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"I found this near a bunker..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"I thought people needed food...and with the stop sign...you
-      can plate the food..."'
-  - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
-    voicePitch: 1
-    speakerName: '???:'
-    speakerDescription: '"So...in trade...can I use your xbox?"'
+    speakerName: 'Silly Kid:'
+    speakerDescription: '"I like those fun motions games, like chess and guess who.'
   dialogueOptions:
   - optionText: Let me think about it...
     nextDialogue: {fileID: 11400000, guid: 7c059dc706f155b4cb87caf72990018b, type: 2}

@@ -16,16 +16,11 @@ MonoBehaviour:
   - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
     voicePitch: 0.85
     speakerName: 'The Priest:'
-    speakerDescription: '"And So Shall thou open this door..."'
-  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
-    voicePitch: 0.85
-    speakerName: 'The Priest:'
-    speakerDescription: '"I''ve been called by the eyes of god to help the innocents..."'
-  - speakerVoice: {fileID: 8300000, guid: aa7824050ba3146468003605e0352007, type: 3}
-    voicePitch: 0.85
-    speakerName: 'The Priest:'
-    speakerDescription: '"I came here with medical equipment..."'
+    speakerDescription: '"Yield your deadbolts to the cause my child, or face the
+      eternal wrath of the cosmic goose"'
   dialogueOptions:
-  - optionText: Medical Equipment, that is quite rare.
-    nextDialogue: {fileID: 11400000, guid: 0fa98cd4c5bf50b4fa3dc2ab4bf96ddf, type: 2}
+  - optionText: Excuse me?
+    nextDialogue: {fileID: 11400000, guid: 54bfe6f87cec8a14e9ab86826b827091, type: 2}
+  - optionText: Cosmic Goose
+    nextDialogue: {fileID: 11400000, guid: 042d8651e5d0a9b48a9cc28d8abe4770, type: 2}
   anotherEvent: 0

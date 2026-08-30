@@ -55,6 +55,11 @@ public class AlarmEvent : MonoBehaviour
                 gameOver.SetActive(true);
             }
         }
+        else
+        {
+            timer_text.text = "";
+            PlayerPrefs.DeleteKey("Alive_Robots");
+        }
     }
 
     public void DisableAlarm()

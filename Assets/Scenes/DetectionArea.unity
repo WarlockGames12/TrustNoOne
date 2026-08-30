@@ -2407,11 +2407,14 @@ MonoBehaviour:
   - {fileID: -8089553552617441835, guid: eb1056cef4779864797912478cfca8a2, type: 3}
   - {fileID: 6681451351848310075, guid: afd87c7ce3166ed4eadf3f0b31745c73, type: 3}
   - {fileID: -100318675194015929, guid: 8768cc6dd3d2d3f418efda094e053a07, type: 3}
-  - {fileID: 4780885977672759435, guid: 6663a35f96bfb4f4ebf8e8cf9a040d43, type: 3}
   npc1:
-  - {fileID: 0}
+  - {fileID: 4780885977672759435, guid: 6663a35f96bfb4f4ebf8e8cf9a040d43, type: 3}
+  - {fileID: 6283865784994369589, guid: f9ca572913f1b8e4b9755a0127121a87, type: 3}
+  - {fileID: 165774792272496153, guid: 91f716afe6c69e941b7b32ce3ed2b8d4, type: 3}
   npc2:
-  - {fileID: 0}
+  - {fileID: 4544097505895114619, guid: b5edb473453f59b40a8fc3c4b5c184d8, type: 3}
+  - {fileID: 806722269329573408, guid: 64b10de257b8f8b4eaa3d3f45b85601d, type: 3}
+  - {fileID: -100318675194015929, guid: 42034299c149f714ab179cbfc3a4b0de, type: 3}
   afterListEvent: {fileID: 1370284015}
   pointEvent: {fileID: 428142276}
   guaranteedMoney: 100

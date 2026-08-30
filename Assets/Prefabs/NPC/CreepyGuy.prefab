@@ -274,5 +274,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcRole
   id: CreepyGuy
-  roles: 2
+  roles: 1
   gender: 0

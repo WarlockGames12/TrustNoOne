@@ -15,12 +15,12 @@ MonoBehaviour:
   dialogueEntries:
   - speakerVoice: {fileID: 8300000, guid: 5476a1a0afb172e4986479c166b93983, type: 3}
     voicePitch: 1
-    speakerName: '???:'
+    speakerName: Silly Kid
     speakerDescription: '"Hewwo! I brought you a dead pigeon and a stop sign I stole!
       As a trade, can I use your xbox!"'
   dialogueOptions:
-  - optionText: What?
+  - optionText: Oh, What games do you play?
     nextDialogue: {fileID: 11400000, guid: 4661ec3dbdcf7c54cb8b882e66a0d9db, type: 2}
-  - optionText: A Dead Pidgeon? That's a rare find.
+  - optionText: 'A Dead Pidgeon? '
     nextDialogue: {fileID: 11400000, guid: 614b69867ac1c234f8023a731c565b30, type: 2}
   anotherEvent: 0

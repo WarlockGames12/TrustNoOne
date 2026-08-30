@@ -226,7 +226,7 @@ Animator:
   m_GameObject: {fileID: 7391401845727264232}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d464542cb0ac92d45b99ea008b1012a9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -254,8 +254,11 @@ MonoBehaviour:
   eventAnim: {fileID: 5770917141470580551}
   spawnPoint: {fileID: 0}
   audioEvent: {fileID: 0}
-  events: []
-  playOnStart: 0
+  events:
+  - {fileID: 11400000, guid: ffbb0acf8f7fc984482af36790913cf2, type: 2}
+  - {fileID: 11400000, guid: 8683e9b7b301e604c8634cd596cf358d, type: 2}
+  - {fileID: 11400000, guid: b6daf2ca897204144ae55180260bbe7c, type: 2}
+  playOnStart: 1
   playOnEnable: 0
   onEventEnd: 0
 --- !u!114 &6283865784994369589
@@ -271,5 +274,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcRole
   id: Happy
-  roles: 1
+  roles: 2
   gender: 0

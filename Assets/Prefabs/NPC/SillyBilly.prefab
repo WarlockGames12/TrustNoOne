@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcRole
   id: Silly_Billy
-  roles: 1
+  roles: 2
   gender: 0
 --- !u!1 &6574560957322842125
 GameObject:

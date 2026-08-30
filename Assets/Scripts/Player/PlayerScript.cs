@@ -64,8 +64,7 @@ public class PlayerScript : MonoBehaviour
             var ver = Input.GetAxisRaw("Vertical");
             movement += ver * playerSpeed * Time.fixedDeltaTime * Vector3.up;
 
-            playerAnim.SetBool("IsClimbing", true);
-            playerAnim.SetBool("IsFalling", false); 
+            playerAnim.SetBool("IsFalling", true);
             playerAnim.speed = Mathf.Abs(ver);
         }
         else 
@@ -81,9 +80,11 @@ public class PlayerScript : MonoBehaviour
         Footsteps(on_ladder);
 
         // Check for falling
-        if (!grounded && !on_ladder)
+        if (!grounded)
+        {
             playerAnim.SetBool("IsFalling", true);
-        
+        }
+            
         // check if landed
         if (grounded && !was_grounded)
         {
